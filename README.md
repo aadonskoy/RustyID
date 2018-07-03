@@ -52,6 +52,7 @@ RustyID is a secure and private way to share information about yourself, without
   4. Endpoints do not change connection id, allowing users to store information targeted at each endpoint, but not vice versa.
   5. All data and connections are securily encrypted.
   6. You cannot fake being someone else, with asymmetric encryption, you assert that you are the only one with the specified username, without giving up your identity.
+  7. You cannot fake data. Since data is asymmetrically encryped and saved to your profile, only the encryptor can read the real data. Meaning that a user is unable to e.g. fake that he has "paid" for a service. 
 
 ## Establish the connection on a private network
 To use RustyID on your own private network, you have to set up your own singaling server, see [signaling](https://github.com/rasviitanen/rustysignal) for more information on this.
