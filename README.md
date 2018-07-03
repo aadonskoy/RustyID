@@ -54,4 +54,4 @@ RustyID is a secure and private way to share information about yourself, without
   6. You cannot fake being someone else, with asymmetric encryption, you assert that you are the only one with the specified username, without giving up your identity.
 
 ## Establish the connection on a private network
-To use RustyID on your own private network, you have to set up your own singaling server, see [signlaing] (https://github.com/rasviitanen/rustysignal) for more information on this.
+To use RustyID on your own private network, you have to set up your own singaling server, see [signaling](https://github.com/rasviitanen/rustysignal) for more information on this.
