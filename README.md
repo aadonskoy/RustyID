@@ -1,5 +1,5 @@
 # RustyID
-RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to send their data when required to an endpoint.
+RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so, by sending a simple push notification.
 
 ### Data storage
 RustyID stores your data locally. The data is saved to a file with suffix `.rsid`. A user should have a file for each endpoint.
