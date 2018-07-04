@@ -1,5 +1,5 @@
 # RustyID
-RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so, by sending a simple push notification.
+RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so. The information exchange is done according o the standard protocol. Verifiable infoemation needs to be signed by the endpoint.
 
 ### Data storage
 RustyID stores your data locally. The data is saved to a file with suffix `.rsid`. A user should have a file for each endpoint.
@@ -29,6 +29,9 @@ PRIVATE:
 CUSTOM:
   email = "12345@abcde.fgh";
 ```
+
+Verifiable information is stored once the endpoint signs the data, else the client can manipulate information without verification rofm het endpoint. This is however dangerous, and the endpoint should maily write to the `rsid` files.
+
 ### Enable data sharing and data saving
 Data can be shared by first establishing a connection to a peer. This is done from the client, by sending a request to the signaling server, which later establishes a connection between the client, and the endpoint.
 
@@ -48,7 +51,7 @@ RustyID is a secure and private way to share information about yourself, without
 
   1. All information about you is stored on your device, or linked to a cloud.
   2. All information about you is only shared with your approval.
-  3. User meatadata changes with each connection, disallowing the end peer to store data about you.
+  3. User metadata changes with each connection, disallowing the end peer to store data about you.
   4. Endpoints do not change connection id, allowing users to store information targeted at each endpoint, but not vice versa.
   5. All data and connections are securily encrypted.
   6. You cannot fake being someone else, with asymmetric encryption, you assert that you are the only one with the specified username, without giving up your identity.
