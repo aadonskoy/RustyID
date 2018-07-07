@@ -1,5 +1,5 @@
 # RustyID
-RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so via WebRTC. The information exchange is done according o the standard protocol set orf RustyID. Verifiable information needs to be signed by the endpoint.
+RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so via WebRTC. The information exchange is done according o the standard protocol set for RustyID, see external documentation for details. Verifiable information needs to be signed by the endpoint, before it is saved.
 
 ### Data storage
 RustyID stores your data locally. The data is saved to a file with suffix `.rsid`. A user should have a file for each endpoint.
@@ -30,7 +30,7 @@ CUSTOM:
   email = "12345@abcde.fgh";
 ```
 
-Verifiable information is stored once the endpoint signs the data, else the client can manipulate information without verification rofm het endpoint. This is however dangerous, and the endpoint should maily write to the `rsid` files.
+Verifiable information is stored once the endpoint signs the data, else the client can manipulate information without verification rofm het endpoint. This is however dangerous, and the endpoint should mainly write to the `rsid` files.
 
 ### Enable data sharing and data saving
 Data can be shared by first establishing a connection to a peer. This is done from the client, by sending a request to the signaling server, which later establishes a connection between the client, and the endpoint.
