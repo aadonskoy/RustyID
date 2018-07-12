@@ -2,32 +2,34 @@
 RustyID is an API to privately share self sovereign information between peers in a peer-to-peer network. The sharing is done by allowing clients to share their data only when it is required to do so via WebRTC. The information exchange is done according o the standard protocol set for RustyID, see external documentation for details. Verifiable information needs to be signed by the endpoint, before it is saved.
 
 ### Data storage
-RustyID stores your data locally. The data is saved to a file with suffix `.rsid`. A user should have a file for each endpoint.
+RustyID stores your data locally. The data is saved as xml to a file with suffix `.rsid`. A user should have a file for each endpoint.
 
+For example:
 ```
-META:
-  alias = ALIAS;
-  target = TARGET;
-  allow_update_without_auth = false;
-  allow_insertion_without_auth = false;
-  
-  without_auth = [PUBLIC];
-  with_auth = [PRIVATE, CUSTOM];
-  
-PUBLIC:
-  import public from "global_user_one.did";
-  firstname = "firstname";
-  lastname = "lastname";
-  favourite_color = "blue";
+<meta> 
+  <alias>Rasmus</alias> 
+  <endpoint>facebook.com</endpoint>
+  <check>ab3EE26i23i4298&&dsiASDASe9398EEE123Asdkkvo093#</check>
+  <import url="public_profile.rsid">
+</meta>
 
-PRIVATE:
-  import private from "global_user_two.did";
-  import "global_user.did";
-  password = "12345";
-  number = "123492918";
+<information>
+  <g id="public" auth="false">
+    <firstname>Rasmus</firstname>
+    <lastname>Viitanen</lastname>
+    <favourite_color>blue</favourite_color>
+  </g>
+
+  <g id="private" auth="true">
+    <password>12345</password>
+    <number>987654321</password>
+  </g>
   
-CUSTOM:
-  email = "12345@abcde.fgh";
+  <g id="verified" auth="false">
+    <subscription>Ao1jd@EEas2@326i23u4i234&434&</subscription>
+    <premium_subscription>aASD#SDEjiedj9as9#34</premium_subscription>
+  </g>
+</information>
 ```
 
 Verifiable information is stored once the endpoint signs the data, else the client can manipulate information without verification rofm het endpoint. This is however dangerous, and the endpoint should mainly write to the `rsid` files.
