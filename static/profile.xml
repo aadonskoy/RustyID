@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<identity>
+  <g id="meta"> 
+    <item id="alias">rasmus</item> 
+    <item id="endpoint">facebook.com</item>
+    <item id="check-sum">ab3EE26i23i4298siASDASe9398EEE123Asdkkvo09</item>
+  </g>
+
+  <g id="information">
+    <g id="public" auth="false">
+      <item id="firstname">Rasmus</item>
+      <item id="lastname">Viitanen</item>
+      <item id="favourite-color">blue</item>
+    </g>
+
+    <g id="private" auth="true">
+      <item id="password">12345</item>
+      <item id="number">987654321</item>
+    </g>
+  </g>
+</identity>
