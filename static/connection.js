@@ -14,7 +14,7 @@ var ws = null;
 var client = "";
 var server = "";
 
-$("#ws-connect").click(function(){
+function connectToWebsocket() {
     ws = new WebSocket("ws://localhost:3012?user=" + client);
         
     ws.onopen = function(e){    
@@ -50,12 +50,12 @@ $("#ws-connect").click(function(){
     ws.onerror = function(e){   
         console.log("Websocket error");
     }
-});
+}
 
 function setMyId(e){
     e.preventDefault();
     client = $("#user").val();
-    $("#ws-connect").show();
+    connectToWebsocket();
     return false;
 }
 
@@ -111,6 +111,7 @@ function createDataChannel (){
     peerConnection.ondatachannel = function (ev) {
         console.log('peerConnection.ondatachannel event fired.');
         ev.channel.onopen = function() {
+            getIdentityDoc("id/" + server + ".xml");
             console.log('Data channel is open and ready to be used.');
         };
         ev.channel.onmessage = function(e){

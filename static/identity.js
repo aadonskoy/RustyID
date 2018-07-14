@@ -1,5 +1,4 @@
 var identityDocument; // Set in getIdentityDoc()
-getIdentityDoc("profile.xml");
 
 function getIdentityProperty(item) {
     return identityDocument.getElementById(item).innerHTML;
